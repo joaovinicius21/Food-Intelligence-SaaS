@@ -26,7 +26,7 @@ function StepTitle({ n, title }: { n: number; title: string }) {
   );
 }
 
-export function PlanBuilderForm({ initialPlan }: { initialPlan?: string }) {
+export function PlanBuilderForm({ initialPlan }: { initialPlan?: string | undefined }) {
   const [optionId, setOptionId] = useState<string | null>(
     planOptions.some((p) => p.id === initialPlan) ? initialPlan! : null,
   );

@@ -5,8 +5,8 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { siteConfig } from "@/config/site";
 
 export const Route = createFileRoute("/montar-plano")({
-  validateSearch: (s: Record<string, unknown>): { plano?: string } => ({
-    plano: typeof s.plano === "string" ? s.plano : undefined,
+  validateSearch: (s: Record<string, unknown>): { plano?: string | undefined } => ({
+    plano: typeof s["plano"] === "string" ? s["plano"] : undefined,
   }),
   head: () => ({
     meta: [

@@ -22,7 +22,7 @@ export const Route = createFileRoute("/admin")({
   component: AdminLayout,
 });
 
-function NavList({ onNavigate }: { onNavigate?: () => void }) {
+function NavList({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   return (
     <nav className="flex flex-col gap-1">
       {adminNav.map(({ to, label, icon: Icon }) => (
@@ -40,7 +40,7 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-function SidebarBody({ onNavigate }: { onNavigate?: () => void }) {
+function SidebarBody({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   return (
     <div className="flex h-full flex-col gap-8 bg-sidebar p-4 text-sidebar-foreground">
       <Logo inverted className="px-2 pt-2" />
